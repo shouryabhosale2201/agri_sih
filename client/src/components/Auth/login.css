@@ -1,0 +1,28 @@
+/* LoginForm.css */
+/* Style for the login form */
+.card {
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background: linear-gradient(to bottom, #7872cd, #ce1885);
+    color: white;
+    text-align: center;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 15px;
+  }

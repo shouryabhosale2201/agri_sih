@@ -1,4 +1,48 @@
-import { useEffect, useContext } from "react"; 
+// import { useEffect, useContext } from "react"; 
+// import "./Home.scss";
+// import Banner from "./Banner/Banner";
+// import Category from "./Category/Category";
+// import Products from "../Products/Products";
+// import { fetchDataFromApi } from "../../utils/api";
+// import { Context } from "../../utils/context";
+
+// const Home = () => {
+//     const {categories, setCategories, products, setProducts} = useContext(Context);
+   
+//     useEffect(() => {
+//         getProducts();
+//         getCategories();
+//     }, []);
+   
+//     const getProducts = () => {
+//         fetchDataFromApi("/api/products?populate=*").then((res) => {
+//             console.log(res);
+//             setProducts(res);
+//         });
+//     };
+//     const getCategories = () => {
+//         fetchDataFromApi("/api/categories?populate=*").then((res) => {
+//             console.log(res);
+//             setCategories(res);
+//         });
+//     };
+   
+//     return (
+//         <div>
+//             <Banner />
+//             <div className="main-content">
+//                 <div className="layout">
+//                     <Category categories={categories}/>
+//                     <Products products={products} headingText="Popular Products" />
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// };
+
+// export default Home;
+
+import { useEffect, useContext } from "react";
 import "./Home.scss";
 import Banner from "./Banner/Banner";
 import Category from "./Category/Category";
@@ -7,32 +51,39 @@ import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
 
 const Home = () => {
-    const {categories, setCategories, products, setProducts} = useContext(Context);
+    const { categories, setCategories, products, setProducts } = useContext(Context);
    
     useEffect(() => {
         getProducts();
         getCategories();
     }, []);
    
-    const getProducts = () => {
-        fetchDataFromApi("/api/products?populate=*").then((res) => {
+    const getProducts = async () => {
+        try {
+            const res = await fetchDataFromApi("http://localhost:5001/api/products");
             console.log(res);
-            setProducts(res);
-        });
+            setProducts(res.data); // Correctly set the products data
+        } catch (error) {
+            console.error('Error fetching products:', error);
+        }
     };
-    const getCategories = () => {
-        fetchDataFromApi("/api/categories?populate=*").then((res) => {
+
+    const getCategories = async () => {
+        try {
+            const res = await fetchDataFromApi("http://localhost:5001/api/categories");
             console.log(res);
-            setCategories(res);
-        });
+            setCategories(res.data); // Correctly set the categories data
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
     };
-   
+
     return (
         <div>
             <Banner />
             <div className="main-content">
                 <div className="layout">
-                    <Category categories={categories}/>
+                    <Category categories={categories} />
                     <Products products={products} headingText="Popular Products" />
                 </div>
             </div>
@@ -41,3 +92,4 @@ const Home = () => {
 };
 
 export default Home;
+

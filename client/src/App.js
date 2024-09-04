@@ -1,11 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // TO MAINTAIN A LINK BETWEEN MULTIPLE PAGES OF THE WEBSITE.
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Category from "./components/Category/Category";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
-import NewsLetter from "./components/Footer/Newsletter/Newsletter";
 import AppContext from "./utils/context";
 import Blog from "./components/Header/Blog/Blog";
 import BlogPost1 from "./components/Header/Blog/blogpost1";
@@ -14,6 +12,8 @@ import BlogPost3 from "./components/Header/Blog/blogpost3";
 import BlogPost4 from "./components/Header/Blog/blogpost4";
 import BlogPost5 from "./components/Header/Blog/blogpost5";
 import BlogPost6 from "./components/Header/Blog/blogpost6";
+import Login from "./components/Auth/Login";
+import Registration from "./components/Auth/Registration";
 
 function App() {
     return (
@@ -31,9 +31,9 @@ function App() {
                     <Route path="/blogpost4" element={<BlogPost4 />} />
                     <Route path="/blogpost5" element={<BlogPost5 />} />
                     <Route path="/blogpost6" element={<BlogPost6 />} />
+                    <Route path="/login" element={<Login/>} />
+                    <Route path="/register" element={<Registration/>} />
                 </Routes>
-                <NewsLetter />
-                <Footer />
             </AppContext>
         </BrowserRouter>
     );

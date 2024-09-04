@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
+// Define the Product Schema
 const ProductSchema = new Schema({
     name: {
         type: String,
@@ -18,12 +19,16 @@ const ProductSchema = new Schema({
         data: [{
             attributes: {
                 url: {
-                    type: String,
-                    required: true
+                    type: String
                 }
             }
         }]
-    }]
+    }],
+    farmer: {
+        type: Schema.Types.ObjectId,
+        ref: 'Farmer', // Reference to the Farmer model
+        required: true
+    }
 });
 
 const ProductModel = mongoose.model('Product', ProductSchema);

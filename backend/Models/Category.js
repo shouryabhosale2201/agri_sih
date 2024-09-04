@@ -3,8 +3,7 @@ const { Schema } = mongoose;
 
 const CategorySchema = new Schema({
     imgUrl: {
-        type: String,
-        required: true
+        type: String
     }
 });
 

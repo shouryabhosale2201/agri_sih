@@ -83,10 +83,25 @@ router.post("/login", async (req, res) => {
             FarmerId: FarmerDoc._id,
         }, JWT_SECRET);
 
-        res.cookie("token", token).json({ message: "Login successful", token });
+        const {password: pass, ...rest} = Farmer._doc;
+        res.cookie("token", token,{httpOnly: true}).status(200).json(rest);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Internal Server Error" });
+    }
+});
+
+router.get('/checkLoginStatus', (req, res) => {
+    const token = req.cookies.token;
+    if (token) {
+        jwt.verify(token, JWT_SECRET, (err, decoded) => {
+            if (err) {
+                return res.status(401).json({ isLoggedIn: false });
+            }
+            res.json({ isLoggedIn: true });
+        });
+    } else {
+        res.json({ isLoggedIn: false });
     }
 });
 
