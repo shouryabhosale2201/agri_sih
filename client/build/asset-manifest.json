@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.32337b85.css",
+    "main.js": "/static/js/main.0f240255.js",
+    "static/media/newsletter-bg.jpeg": "/static/media/newsletter-bg.32e28bbcd43546e51075.jpeg",
+    "static/media/blog-banner.png": "/static/media/blog-banner.e9b20772aa0dc91f321b.png",
+    "static/media/img5.png": "/static/media/img5.9da5a6da6387b6676ea7.png",
+    "static/media/banner-img.png": "/static/media/banner-img.05c5fb1a941fa81dfc85.png",
+    "static/media/img2.png": "/static/media/img2.5f57b1cee3a0254e7392.png",
+    "static/media/img3.png": "/static/media/img3.fc986f645a145ac20dde.png",
+    "static/media/img6.png": "/static/media/img6.3c4419f30d876f29c331.png",
+    "static/media/img4.png": "/static/media/img4.515472b0cb607c647570.png",
+    "static/media/img1.png": "/static/media/img1.78e9ad1d510bb5c7d4cc.png",
+    "static/media/Apple.png": "/static/media/Apple.fee7e6987548096bcb02.png",
+    "index.html": "/index.html",
+    "main.32337b85.css.map": "/static/css/main.32337b85.css.map",
+    "main.0f240255.js.map": "/static/js/main.0f240255.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.32337b85.css",
+    "static/js/main.0f240255.js"
+  ]
+}
