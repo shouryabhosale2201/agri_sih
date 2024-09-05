@@ -1,25 +1,26 @@
 import React, { useState, useContext } from "react";
-import { Navigate } from "react-router-dom";
-import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import "./login.css";
 import { Context } from "../../utils/context";
 
 function Login() {
-  const { farmer, setFarmer } = useContext(Context);
+  const { handleLogin } = useContext(Context);  // Get handleLogin from context
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleLoginSubmit = async (event) => {
     event.preventDefault();
+
     try {
-      const { data } = await axios.post("http://localhost:5001/api/user/login", { email, password });
-      setFarmer(data);
+      await handleLogin(email, password);  // Call handleLogin from context
       alert("Login successful");
-      <Navigate to={farmer ? "/" : "/login"} />;
+      navigate("/");  // Redirect to the home page after successful login
     } catch (error) {
       alert("Login Failed");
     }
   };
+
 
   return (
     <>

@@ -64,10 +64,10 @@ router.post("/login", async (req, res) => {
         if (!success) {
             return res.status(411).json({
                 message: "Incorrect inputs"
-            })
+            });
         }
 
-        const FarmerDoc = await Farmer.findOne({ email : req.body.email });
+        const FarmerDoc = await Farmer.findOne({ email: req.body.email });
 
         if (!FarmerDoc) {
             return res.status(404).json({ error: "Farmer not found" });
@@ -83,13 +83,16 @@ router.post("/login", async (req, res) => {
             FarmerId: FarmerDoc._id,
         }, JWT_SECRET);
 
-        const {password: pass, ...rest} = Farmer._doc;
-        res.cookie("token", token,{httpOnly: true}).status(200).json(rest);
+        // Correct the destructuring by using FarmerDoc._doc
+        const { password: pass, ...rest } = FarmerDoc._doc;
+
+        res.cookie("token", token, { httpOnly: true }).status(200).json(rest);
     } catch (err) {
         console.error(err);
         res.status(500).json({ error: "Internal Server Error" });
     }
 });
+
 
 router.get('/checkLoginStatus', (req, res) => {
     const token = req.cookies.token;

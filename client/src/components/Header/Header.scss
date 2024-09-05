@@ -1,4 +1,5 @@
 @import "../../css-config/mixins.scss";
+
 .main-header {
     width: 100%;
     //position: fixed;
@@ -8,9 +9,11 @@
     color: white;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     z-index: 99;
-    @include md{
+
+    @include md {
         padding: 0 40px;
     }
+
     .header-content {
         display: flex;
         justify-content: space-between;
@@ -18,17 +21,21 @@
         height: 45px;
         max-width: 1200px;
         margin: 0 auto;
-        @include md{
-            height: 60px;      //Atharv se bolna hai
+
+        @include md {
+            height: 60px; // Atharv se bolna hai
         }
+
         .left {
             list-style-type: none;
             display: none;
             gap: 25px;
-            @include md{
+
+            @include md {
                 display: flex;
             }
-            li{
+
+            li {
                 font-size: 14px;
                 font-weight: 600;
                 text-transform: uppercase;
@@ -37,13 +44,15 @@
         }
 
         .center {
-            font-size: 22px;
+            font-size: 12px;
             font-weight: 700;
+            color: #38e54d; /* Green color for the brand name */
             cursor: pointer;
-            @include md{
-                font-size: 34px;
+
+            @include md {
+                font-size: 25px;
                 position: absolute;
-                right: 45%;     //Atharv se ye karne ka bolna
+                right: 45%; // Atharv se ye karne ka bolna
             }
         }
 
@@ -51,22 +60,27 @@
             display: flex;
             align-items: center;
             gap: 20px;
-            @include md{
+
+            @include md {
                 gap: 25px;
             }
-            svg{
+
+            svg {
                 font-size: 20px;
                 cursor: pointer;
-                @include md{
+
+                @include md {
                     font-size: 24px;
                 }
             }
-            .cart-icon{
+
+            .cart-icon {
                 position: relative;
-                span{
+
+                span {
                     min-width: 20px;
                     text-align: center;
-                    background-color: #38E54D;
+                    background-color: #38e54d; /* Green color for the cart badge */
                     padding: 2.5px;
                     position: absolute;
                     top: -5px;
@@ -77,15 +91,21 @@
                 }
             }
         }
-        &.sticky-header{
+
+        &.sticky-header {
             position: sticky;
             top: 0;
-            animation: stickyHeader .3s ease forwards;
-            transform:translateY(-80px);
+            animation: stickyHeader 0.3s ease forwards;
+            transform: translateY(-80px);
         }
     }
 }
+
 @keyframes stickyHeader {
-    0%{transform:translateY(-80px);}
-    100%{transform:translateY(0);}
+    0% {
+        transform: translateY(-80px);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

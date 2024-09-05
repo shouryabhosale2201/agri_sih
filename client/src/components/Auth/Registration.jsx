@@ -14,7 +14,7 @@ function Signup() {
   const registerUser = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:5001/api/user/register", {
+      await axios.post("http://localhost:5001/api/farmer/register", {
         name,
         email,
         password,

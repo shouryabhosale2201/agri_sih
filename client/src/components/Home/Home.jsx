@@ -60,7 +60,7 @@ const Home = () => {
    
     const getProducts = async () => {
         try {
-            const res = await fetchDataFromApi("http://localhost:5001/api/products");
+            const res = await fetchDataFromApi("/api/products");
             console.log(res);
             setProducts(res.data); // Correctly set the products data
         } catch (error) {
@@ -70,7 +70,7 @@ const Home = () => {
 
     const getCategories = async () => {
         try {
-            const res = await fetchDataFromApi("http://localhost:5001/api/categories");
+            const res = await fetchDataFromApi("/api/categories");
             console.log(res);
             setCategories(res.data); // Correctly set the categories data
         } catch (error) {

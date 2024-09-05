@@ -1,28 +1,60 @@
 /* LoginForm.css */
-/* Style for the login form */
+/* Ensure the body and html take up the full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    background-color: #f0f8f0; /* Light green background for the entire page */
+}
+
 .card {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-header {
-    background: linear-gradient(to bottom, #7872cd, #ce1885);
+    width: 100%;
+    max-width: 400px; /* Adjust based on your design needs */
+    margin: auto;
+    position: absolute; /* Center the card */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the card vertically and horizontally */
+    background-color: white; /* White background for the card */
+}
+
+.card-header {
+    background: linear-gradient(to bottom, #4caf50, #388e3c); /* Green gradient */
     color: white;
     text-align: center;
     font-weight: bold;
-  }
-  
-  .card-body {
+    padding: 15px; /* Add padding for better spacing */
+}
+
+.card-body {
     padding: 20px;
-  }
-  
-  .form-label {
+}
+
+.form-label {
     font-weight: bold;
-  }
-  
-  .form-control {
+    color: #388e3c; /* Dark green color for labels */
+}
+
+.form-control {
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #a5d6a7; /* Light green border */
     padding: 10px;
     margin-bottom: 15px;
-  }
+    width: 100%; /* Ensure the input fields take up the full width of the card */
+}
+
+button {
+    width: 100%; /* Make buttons take up full width */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #4caf50; /* Green background for buttons */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #388e3c; /* Darker green for hover effect */
+}

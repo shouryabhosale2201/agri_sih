@@ -61,12 +61,13 @@ const AppContext = ({ children }) => {
             const res = await axios.post("http://localhost:5001/api/farmer/login", { email, password });
             if (res.data.token) {
                 setIsLoggedIn(true);
-                setFarmer(res.json());
+                setFarmer(res.data); // Use res.data directly
             }
         } catch (err) {
             console.error(err);
         }
     };
+    
 
     const handleLogout = () => {
         axios.post("http://localhost:5001/api/farmer/logout")

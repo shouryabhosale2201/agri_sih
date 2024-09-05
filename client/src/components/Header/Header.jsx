@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import { TbSearch } from "react-icons/tb";
 import { CgShoppingCart } from "react-icons/cg";
 import { AiOutlineHeart } from "react-icons/ai";
-import Logo from "./Logo.png";
 import Search from "./Search/Search";
 import Cart from "../Cart/Cart";
 import { Context } from "../../utils/context";
@@ -41,7 +40,7 @@ const Header = () => {
                         <li onClick={() => navigate("/categories")}>Categories</li>
                     </ul>
                     <div className="center" onClick={() => navigate("/")}>
-                        <img src={Logo} alt="Logo" />
+                        <h1 className="brand-name">AgriMarket</h1> {/* Replaced logo with text */}
                     </div>
                     <div className="right">
                         <TbSearch onClick={() => setShowSearch(true)} />
