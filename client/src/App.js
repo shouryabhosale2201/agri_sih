@@ -14,6 +14,8 @@ import BlogPost5 from "./components/Header/Blog/blogpost5";
 import BlogPost6 from "./components/Header/Blog/blogpost6";
 import Login from "./components/Auth/Login";
 import Registration from "./components/Auth/Registration";
+import Footer from "./components/Footer/Footer";
+import Newsletter from "./components/Footer/Newsletter/Newsletter";
 
 function App() {
     return (
@@ -34,6 +36,8 @@ function App() {
                     <Route path="/login" element={<Login/>} />
                     <Route path="/register" element={<Registration/>} />
                 </Routes>
+                <Newsletter/>
+                <Footer/>
             </AppContext>
         </BrowserRouter>
     );
