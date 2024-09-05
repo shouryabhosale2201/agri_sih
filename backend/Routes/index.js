@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.use("/farmer", FarmerAuthRouter);
 router.use("/products", ProductsRouter);
-router.subscribe("/category", CategoryRouter);
+router.use("/categories", CategoryRouter);
 
 module.exports = router;

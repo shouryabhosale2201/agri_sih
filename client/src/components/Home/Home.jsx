@@ -49,6 +49,7 @@ import Category from "./Category/Category";
 import Products from "../Products/Products";
 import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
+import axios from "axios";
 
 const Home = () => {
     const { categories, setCategories, products, setProducts } = useContext(Context);
@@ -60,7 +61,7 @@ const Home = () => {
    
     const getProducts = async () => {
         try {
-            const res = await fetchDataFromApi("/api/products");
+            const res = await axios.get("http://localhost:5001/api/products");
             console.log(res);
             setProducts(res.data); // Correctly set the products data
         } catch (error) {
@@ -70,7 +71,7 @@ const Home = () => {
 
     const getCategories = async () => {
         try {
-            const res = await fetchDataFromApi("/api/categories");
+            const res = await axios.get("http://localhost:5001/api/categories");
             console.log(res);
             setCategories(res.data); // Correctly set the categories data
         } catch (error) {

@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const CategoryModel = require('../Models/Category');
 
-router.get('/api/categories', async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const categories = await CategoryModel.find();
         res.json({ data: categories });
@@ -11,7 +11,7 @@ router.get('/api/categories', async (req, res) => {
     }
 });
 
-router.post('/api/categories', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newCategory = new CategoryModel(req.body);
         const savedCategory = await newCategory.save();
